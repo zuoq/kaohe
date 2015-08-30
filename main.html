@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    body{
+        min-height: 100%;
+    }
+    #router{
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<iframe id="router" src="index1.html"></iframe>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        var iframe = document.getElementById("router");
+        iframe.style.width = window.innerWidth + 'px';
+        iframe.style.height = window.innerHeight + 'px';
+    };
+</script>
+<script>
+    //ajax
+    function ajx(url, params, cb){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        xhr.send(params && JSON.stringify(params));
+        xhr.onload = function(res){
+            cb && cb(xhr.responseText);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+        ajx('http://kaohe.zeroling.com/kaohe//state', {}, function(res){
+            var data = JSON.parse(res);
+            document.querySelector('#router').src= 'index'+data.state+'.html';
+        })
+    });
+</script>
+</html>
