@@ -1,0 +1,46 @@
+//设计稿宽度，用于rem的被除数
+@psdWidth: 64;
+@bodyColor: #fff;
+@textColor: #000;
+@color: #fff;
+@marginLeftPer: 4.6875%;
+@listWidth: 95.312%;
+@border: 1px solid #e5e5e5;
+.rfz(@px){
+	font-size: @px / 3;
+	[data-dpr="2"] &{
+		font-size: @px / 2;
+	}
+	[data-dpr="3"] &{
+		font-size: @px;
+	}
+}
+
+//清除浮动
+.clearfix:after{
+	content: "";
+	display: block;
+	line-height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+//渲染为 border-box
+.render-box{
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+//修复图片, 前提是背景图片  不是背景图片怎么办？
+//图片大于容器
+.fix-img-over{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+//图片小于容器
+.fix-img-small{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}

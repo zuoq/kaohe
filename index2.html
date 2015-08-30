@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>2</title>
+    <link rel="stylesheet" href="style/main1.css"/>
+</head>
+<script src="js/flexible.js"></script>
+<body id="two">
+    <div class="no-open">
+        <div class="sorry-bg"></div>
+        <p>当前城市服务还未开通</p>
+    </div>
+    <div class="search">搜索附近城市的热门商家</div>
+    <div id="list-wrap">
+
+    </div>
+    <div id="loading">
+        <img src="img/loading.gif" alt=""/>
+    </div>
+</body>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/template" id="temp">
+    <%data.forEach(function(ele){%>
+    <div class="list">
+        <div class="left-pic"><img src="<%= ele['imgUrl']%>" alt=""/></div>
+        <div class="right">
+            <div class="top">
+                <li class="title"><%= ele['title']%></li>
+                <span></span>
+            </div>
+            <div class="middle">
+                <li class="star"></li>
+                <li class="star"></li>
+                <li class="star"></li>
+                <p>人均<%= ele['average']%>元</p>
+            </div>
+            <div class="buttom">
+                <li class="nice"></li>
+                <p><%= ele['good']%>位朋友</p>
+                <span><%= ele['distance']%></span>
+            </div>
+            <div class="discount">
+                <span>折</span>
+                <li class="num"><%= ele['discount']%></li>
+            </div>
+        </div>
+
+    </div>
+    <%})%>
+    <%data.forEach(function(ele){%>
+    <div class="list">
+        <div class="left-pic"><img src="<%= ele['imgUrl']%>" alt=""/></div>
+        <div class="right">
+            <div class="top">
+                <li class="title"><%= ele['title']%></li>
+                <span></span>
+            </div>
+            <div class="middle">
+                <li class="star"></li>
+                <li class="star"></li>
+                <li class="star"></li>
+                <p>人均<%= ele['average']%>元</p>
+            </div>
+            <div class="buttom">
+                <li class="nice"></li>
+                <p><%= ele['good']%>位朋友</p>
+                <span><%= ele['distance']%></span>
+            </div>
+            <div class="discount">
+                <span>折</span>
+                <li class="num"><%= ele['discount']%></li>
+            </div>
+        </div>
+
+    </div>
+    <%})%>
+</script>
+
+<script src="js/index.js">
+</script>
+</html>
